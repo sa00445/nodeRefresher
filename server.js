@@ -1,9 +1,9 @@
-const http = require('http');
+const express = require('express');
 
-const server = http.createServer((req, res) => {
-  console.log('request made');
-});
+const app = express();
 
-server.listen(3000, 'localhost', () => {
-  console.log("Listening on port 3000");
-});
+app.listen(3000);
+
+app.get('/', (req, res) => {
+  res.send('<p> This is a paragraph </p>')
+})
